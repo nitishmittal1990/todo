@@ -5,6 +5,9 @@ h1 {
   text-align: center;
   
 }
+.App {
+  padding: 0 6px;
+}
 .add-todo {
   max-width: 500px;
   margin: 12px auto;
@@ -35,4 +38,10 @@ h1 {
     text-transform: uppercase;
     vertical-align: middle;
     cursor: pointer;
+}
+.todo-list {
+  max-height: 500px;
+  overflow-y: auto;
+  max-width: 500px;
+  margin: 0 auto;
 }

@@ -95,23 +95,32 @@ function App() {
       </header>
       <main>
         <div className="add-todo">
-          <input type="text" name="todo" placeholder="Enter Todo Text" id="todo" onKeyPress={handleKeyPress} />
+          <input
+            type="text"
+            name="todo"
+            placeholder="Enter Todo Text"
+            id="todo"
+            onKeyPress={handleKeyPress}
+          />
           <input type="submit" value="Create Todo" onClick={createTodo} />
         </div>
-        {todos.length > 0 ? (
-          todos.map((todo) => {
-            return <Todo 
-                      key={todo.id} 
-                      id={todo.id}
-                      name={todo.name}
-                      isCompleted={todo.isCompleted}
-                      completeTodo={completeTodo}
-                      deleteTodo={deleteTodo}
-                      updateTodo={updateTodo} 
-                    />
-          })
-        ) : ''}
-        
+        <div className="todo-list">
+          {todos.length > 0
+            ? todos.map((todo) => {
+                return (
+                  <Todo
+                    key={todo.id}
+                    id={todo.id}
+                    name={todo.name}
+                    isCompleted={todo.isCompleted}
+                    completeTodo={completeTodo}
+                    deleteTodo={deleteTodo}
+                    updateTodo={updateTodo}
+                  />
+                );
+              })
+            : ""}
+        </div>
       </main>
     </div>
   );
